@@ -1,12 +1,12 @@
 {
   "name": "oxydien",
-  "version": "0.0.0",
-  "version_addons": "3f",
+  "version": "0.0.1",
+  "version_addons": "0a",
   "dev": false,
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
+    "dev": "vite --host",
+    "start": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },

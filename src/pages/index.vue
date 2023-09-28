@@ -19,8 +19,8 @@
   display: grid;
   place-items: center;
   margin-top: 70vh;
-  width: var(--overlay-width);
-  height: var(--overlay-height);
+  width: 100%;
+  height: calc(100% - 1rem);
 
   p {
     margin: 0 auto;

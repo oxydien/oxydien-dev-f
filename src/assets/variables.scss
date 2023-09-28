@@ -1,6 +1,5 @@
 body {
-  --overlay-width: 90vw;
-  --overlay-height: 90vh;
+  --overlay-width: 100vmin;
 
   --color-bg: #000;
   --color-main-bg: #111111;
@@ -32,6 +31,5 @@ body.dark {
 @media screen and (max-width: 599px) {
   body {
     --overlay-width: 100vw;
-    --overlay-height: 100vh;
   }
 }

@@ -84,7 +84,7 @@
         margin-top: 5px;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 16px;
       }
 
@@ -114,11 +114,6 @@
               }
             }
           }
-        }
-        .app-info {
-          position: absolute;
-          bottom: 0;
-          margin: 0 0 5px;
         }
       }
     }
@@ -191,12 +186,13 @@
                 </button>
               </div>
             </div>
-            <div class="theme" style="display: none;"> <!-- Themes are done, just not the buttons -->
+            <div class="theme" style="display: none">
+              <!-- Themes are done, just not the buttons -->
               <span>{{ getTranstatedL("header.settings.theme") }}: </span>
             </div>
           </div>
           <div class="app-info">
-            version: 
+            version:
             {{ app_info.version + app_info.version_addons }}
           </div>
         </div>
