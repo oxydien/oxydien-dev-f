@@ -1,0 +1,37 @@
+body {
+  --overlay-width: 90vw;
+  --overlay-height: 90vh;
+
+  --color-bg: #000;
+  --color-main-bg: #111111;
+  --color-bg-highlight: #282828;
+  --color-button-bg: #353535;
+
+  --color-txt-highlight: #ffffff;
+  --color-txt: #bbbbbb;
+  --color-txt-muted: #ACACAC;
+  --color-txt-m-muted: #949494;
+
+  --color-highlighted: #388000;
+}
+body.light {
+  --color-bg: #ffffff;
+  --color-main-bg: #efefef;
+  --color-bg-highlight: #c5c5c5;
+  --color-button-bg: #9e9e9e;
+
+  --color-txt-highlight: #000000;
+  --color-txt: #141414;
+  --color-txt-muted: #2c2c2c;
+  --color-txt-m-muted: #4f4f4f;
+}
+body.dark {
+
+}
+
+@media screen and (max-width: 599px) {
+  body {
+    --overlay-width: 100vw;
+    --overlay-height: 100vh;
+  }
+}

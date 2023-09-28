@@ -1,0 +1,23 @@
+{
+  "name": "oxydien",
+  "version": "0.0.0",
+  "version_addons": "3f",
+  "dev": false,
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pinia": "^2.1.6",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.1",
+    "vite": "^4.4.9"
+  }
+}

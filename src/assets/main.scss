@@ -1,0 +1,80 @@
+@import url(./variables.scss);
+
+body {
+  position: relative;
+  background-color: var(--color-bg);
+  color: var(--color-txt-highlight);
+  font-family: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  background-color: var(--color-main-bg);
+
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+
+    width: var(--overlay-width);
+    height: unset;
+    aspect-ratio: 16/9;
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: -100%;
+      margin: auto;
+      width: 250%;
+      height: 250%;
+      animation: rotateMain 5s linear infinite;
+      transform-origin: 50% 50%;
+      background: linear-gradient(90deg, #00ff00 0%, #ff4800 100%);
+      border-radius: 12px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 2px;
+      background-color: var(--color-main-bg);
+      border-radius: 12px;
+    }
+
+    &>* {
+      z-index: 80;
+    }
+  }
+}
+
+.hr {
+  height: 3px;
+  background-color: var(--color-button-bg);
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+@keyframes rotateMain {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
