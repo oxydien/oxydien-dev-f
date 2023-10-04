@@ -7,6 +7,10 @@
   overflow-x: hidden;
 
   scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 .content {
   position: relative;

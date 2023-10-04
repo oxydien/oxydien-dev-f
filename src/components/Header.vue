@@ -40,6 +40,23 @@
   overflow-y: auto;
   z-index: 65;
 
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-txt-muted);
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-txt-m-muted);
+  }
+
   &.open {
     height: calc(100% - 4px) !important;
     transition: height 120ms;
