@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ main: showOverlay }">
+  <div :class="{ main: showOverlay }" ref="main">
     <index v-if="page === 'index'" />
     <Router
       v-else
@@ -49,10 +49,23 @@ export default {
     rescaleOverlay() {
       if (this.showOverlay) {
         const viewportWidth = window.innerWidth;
-        const viewportHeight = getComputedStyle(document.body).getPropertyValue("height");
-        document.body.style.cssText += `--overlay-width: ${
-          viewportWidth <= viewportHeight ? "130svh" : "90vw"
-        }`;
+        const viewportHeight = window.innerHeight;
+        let overlayWidth;
+        if (viewportWidth < viewportHeight) {
+          overlayWidth = "90vw";
+          console.log(viewportWidth, viewportHeight, "WIDTH");
+        } else {
+          const aspectRatio = viewportWidth / viewportHeight;
+          console.log(aspectRatio, 18 / 9);
+          if (aspectRatio > 17.8 / 9) {
+            overlayWidth = "90vh";
+            console.log(viewportWidth, viewportHeight, "height");
+          } else {
+            overlayWidth = "90vw";
+            console.log(viewportWidth, viewportHeight, "width");
+          }
+        }
+        document.body.style.cssText += `--overlay-width: ${overlayWidth}`;
       }
     },
   },

@@ -32,7 +32,7 @@
   position: absolute;
   inset: 2px;
   width: calc(100% - 4px);
-  border-radius: 15px;
+  border-radius: 12px;
   background-color: var(--color-bg-highlight);
   box-sizing: border-box;
   // transition: height 0ms;
@@ -154,6 +154,16 @@
             }
           }
         }
+        .app-info {
+          strong {
+            display: inline-block;
+            min-width: 100px;
+          }
+          a {
+            color: var(--color-highlighted);
+            text-decoration: none;
+          }
+        }
       }
     }
   }
@@ -231,8 +241,19 @@
             </div>
           </div>
           <div class="app-info">
-            version:
-            {{ app_info.version + app_info.version_addons }}
+            <span
+              ><strong>version:</strong>
+              <a
+                href="https://github.com/oxydien/oxydien-dev-f"
+                target="_blank"
+              >
+                {{ app_info.version + app_info.version_addons }}
+              </a> </span
+            ><br />
+            <span
+              ><strong>hosted on:</strong>
+              <a href="https://vercel.com" target="_blank">vercel</a>
+            </span>
           </div>
         </div>
       </div>

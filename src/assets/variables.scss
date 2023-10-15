@@ -31,7 +31,7 @@ body.dark {
 
 @media screen and (max-width: 599px) {
   body {
-    --overlay-width: 100vw;
-    --overlay-height: 100vh;
+    --overlay-width: 100vw !important;
+    --overlay-height: 100vh !important;
   }
 }
