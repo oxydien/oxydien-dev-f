@@ -29,8 +29,14 @@
     bottom: 0;
     right: 0;
     margin: 0 8px 5px 0;
+
+    img {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
     .animate {
-      animation: fadeInOut 3s forwards;
+      animation: fadeInOut 1.7s forwards;
     }
     :not(.animate) {
       opacity: 0;
@@ -45,7 +51,7 @@
     padding: 5px;
     font-size: 1.2rem;
     align-items: center;
-    height: calc(100% - 50px);
+    height: calc(100% - 80px);
 
     .pages {
       display: block;
@@ -109,6 +115,13 @@
         :class="{ animate: show.keyboardIcon }"
         aria-label="Use arrow keys to navigate"
       />
+      <img
+        src="/assets/svg/arrow_keys.svg"
+        alt="use arrow keys"
+        width="32"
+        :class="{ animate: show.arrowsIcon }"
+        aria-label="Use arrow keys to navigate"
+      />
     </div>
     <div class="content" @click="showKeyboardIcon">
       <ul class="pages">
@@ -142,7 +155,7 @@
 
 <script>
 import Logo from "./Logo.vue";
-import { routeList, useStore } from "../stores/routes";
+import { routeList, useRouteStore } from "../stores/routes";
 
 import { getTranstated } from "../stores/lang";
 
@@ -156,6 +169,7 @@ export default {
       selected: 0,
       show: {
         keyboardIcon: false,
+        arrowsIcon: false,
       },
     };
   },
@@ -170,7 +184,7 @@ export default {
       return routeList.sort((a, b) => b.priority - a.priority);
     },
     currentPage() {
-      return useStore().currentRoute;
+      return useRouteStore().currentRoute;
     },
   },
   mounted() {
@@ -183,7 +197,7 @@ export default {
   emits: ["pageChange"],
   methods: {
     handleArrowKeys(event) {
-      console.log(new Date().getTime(), event.key);
+      // console.log(new Date().getTime(), event.key);
       switch (event.key) {
         case "ArrowUp":
         case "w":
@@ -207,7 +221,11 @@ export default {
       this.show.keyboardIcon = true;
       setTimeout(() => {
         this.show.keyboardIcon = false;
-      }, 3200);
+        this.show.arrowsIcon = true;
+        setTimeout(() => {
+          this.show.arrowsIcon = false;
+        }, 1700);
+      }, 1700);
     },
     selectPage(index) {
       if (index >= 0 && index < this.pages.length) {

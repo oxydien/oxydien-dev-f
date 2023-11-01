@@ -14,7 +14,7 @@
 <script>
 import index from "./pages/index.vue";
 import Router from "./pages/Router.vue";
-import { useStore } from "./stores/routes";
+import { useRouteStore } from "./stores/routes";
 export default {
   components: {
     index,
@@ -35,15 +35,15 @@ export default {
       var pathname = window.location.pathname.substring(1);
       if (pathname) {
         if (pathname.endsWith("/")) {
-          useStore().changeRoute(pathname.substring(0, pathname.length - 1));
+          useRouteStore().changeRoute(pathname.substring(0, pathname.length - 1));
         } else {
-          useStore().changeRoute(pathname);
+          useRouteStore().changeRoute(pathname);
         }
       } else if (params.has("route")) {
         const routeParam = params.get("route");
         // const newUrl = window.location.pathname;
         // window.history.replaceState({}, "", newUrl);  // <- hide route
-        useStore().changeRoute(routeParam);
+        useRouteStore().changeRoute(routeParam);
       }
     },
     rescaleOverlay() {
@@ -53,16 +53,16 @@ export default {
         let overlayWidth;
         if (viewportWidth < viewportHeight) {
           overlayWidth = "90vw";
-          console.log(viewportWidth, viewportHeight, "WIDTH");
+          // console.log(viewportWidth, viewportHeight, "WIDTH");
         } else {
           const aspectRatio = viewportWidth / viewportHeight;
           console.log(aspectRatio, 18 / 9);
           if (aspectRatio > 17.8 / 9) {
             overlayWidth = "90vh";
-            console.log(viewportWidth, viewportHeight, "height");
+            // console.log(viewportWidth, viewportHeight, "height");
           } else {
             overlayWidth = "90vw";
-            console.log(viewportWidth, viewportHeight, "width");
+            // console.log(viewportWidth, viewportHeight, "width");
           }
         }
         document.body.style.cssText += `--overlay-width: ${overlayWidth}`;
@@ -71,10 +71,10 @@ export default {
   },
   computed: {
     page() {
-      return useStore().currentRoute;
+      return useRouteStore().currentRoute;
     },
     showOverlay() {
-      return useStore().routeDetails.overlay;
+      return useRouteStore().routeDetails.overlay;
     },
   },
 };

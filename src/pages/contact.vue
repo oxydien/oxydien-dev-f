@@ -141,7 +141,7 @@ import { getTranstated } from "../stores/lang";
 export default {
   data() {
     return {
-      email: "contact@oxydien.dev",
+      email: "oxydien@protonmail.com",
       email_copied: false,
     };
   },

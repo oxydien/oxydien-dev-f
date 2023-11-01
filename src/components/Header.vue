@@ -155,13 +155,19 @@
           }
         }
         .app-info {
-          strong {
-            display: inline-block;
-            min-width: 100px;
-          }
-          a {
-            color: var(--color-highlighted);
-            text-decoration: none;
+          display: flex;
+          gap: 20px;
+
+          .col {
+            strong {
+              display: inline-block;
+              min-width: 100px;
+              margin-right: 5px;
+            }
+            a {
+              color: var(--color-highlighted);
+              text-decoration: none;
+            }
           }
         }
       }
@@ -241,19 +247,27 @@
             </div>
           </div>
           <div class="app-info">
-            <span
-              ><strong>version:</strong>
-              <a
-                href="https://github.com/oxydien/oxydien-dev-f"
-                target="_blank"
+            <div class="col">
+              <span
+                ><strong>version:</strong>
+                <a
+                  href="https://github.com/oxydien/oxydien-dev-f"
+                  target="_blank"
+                >
+                  {{ app_info.version + app_info.version_addons }}
+                </a> </span
+              ><br />
+              <span
+                ><strong>hosted on:</strong>
+                <a href="https://vercel.com" target="_blank">vercel</a>
+              </span>
+            </div>
+            <div class="col">
+              <span
+                ><strong>Connected to backend: </strong>
+                <a :href="bg_url">{{ checkBgStatusL() }}</a></span
               >
-                {{ app_info.version + app_info.version_addons }}
-              </a> </span
-            ><br />
-            <span
-              ><strong>hosted on:</strong>
-              <a href="https://vercel.com" target="_blank">vercel</a>
-            </span>
+            </div>
           </div>
         </div>
       </div>
@@ -269,8 +283,9 @@ import ChatIcon from "./icons/ChatIcon.vue";
 import MoreIcon from "./icons/MoreIcon.vue";
 import VideoIcon from "./icons/VideoIcon.vue";
 import WindowIcon from "./icons/WindowIcon.vue";
-import { useStore, routeList } from "../stores/routes";
+import { useRouteStore, routeList } from "../stores/routes";
 
+import { checkBgStatus, useAppStore } from "../stores/appStore";
 import { getTranstated, translations, setLanguage } from "../stores/lang";
 
 import app from "../../package.json";
@@ -301,6 +316,7 @@ export default {
       actuallyOpen: false,
       app_info: app,
       translationsL: translations,
+      bg_url: useAppStore().backend_url,
     };
   },
   mounted() {
@@ -308,15 +324,18 @@ export default {
   },
   methods: {
     isCurrentRoute(route) {
-      return useStore().currentRoute === route;
+      return useRouteStore().currentRoute === route;
     },
     changeRouteTo(route) {
-      useStore().changeRoute(route);
+      useRouteStore().changeRoute(route);
     },
     setLanguageL(lang) {
       setLanguage(lang);
       window.location.href =
-        window.location.href + `?route=${useStore().currentRoute}`;
+        window.location.href + `?route=${useRouteStore().currentRoute}`;
+    },
+    checkBgStatusL() {
+      return checkBgStatus();
     },
     getTranstatedL(key) {
       return getTranstated(key);
@@ -324,7 +343,7 @@ export default {
   },
   computed: {
     currentRoute() {
-      return useStore().currentRoute;
+      return useRouteStore().currentRoute;
     },
     routes() {
       return routeList.sort((a, b) => b.priority - a.priority).slice(0, 6);

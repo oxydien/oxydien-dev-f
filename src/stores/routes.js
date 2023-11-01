@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const useStore = defineStore("app", {
+export const useRouteStore = defineStore("router", {
   state: () => {
     return {
       currentRoute: "index",

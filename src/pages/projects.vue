@@ -67,7 +67,7 @@
 import Header from "../components/Header.vue";
 
 import { getTranstated } from "../stores/lang";
-import { useStore } from "../stores/routes";
+import { useRouteStore } from "../stores/routes";
 
 export default {
   components: {
@@ -79,7 +79,7 @@ export default {
       return getTranstated(key);
     },
     changeRouteL(route) {
-      return useStore().changeRoute(route);
+      return useRouteStore().changeRoute(route);
     },
   },
 };

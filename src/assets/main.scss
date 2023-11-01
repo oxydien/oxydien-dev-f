@@ -44,14 +44,14 @@ body {
       animation: rotateMain 5s linear infinite;
       transform-origin: 50% 50%;
       background: linear-gradient(90deg, #00ff00 0%, #ff4800 100%);
-      border-radius: 12px;
+      border-radius: 16px;
     }
 
     &::after {
       content: "";
       display: block;
       position: absolute;
-      inset: 2px;
+      inset: 4px;
       background-color: var(--color-main-bg);
       border-radius: 12px;
     }

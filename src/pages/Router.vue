@@ -11,7 +11,7 @@ import contact from "../pages/contact.vue";
 import index from "../pages/index.vue";
 import videos from "./videos.vue";
 import projects from "./projects.vue";
-import { useStore } from "../stores/routes";
+import { useRouteStore } from "../stores/routes";
 
 export default {
   components: {
@@ -26,12 +26,12 @@ export default {
   },
   methods: {
     handlePageChange(event) {
-      useStore().changeRoute(event);
+      useRouteStore().changeRoute(event);
     },
   },
   computed: {
     currentRoute() {
-      return useStore().currentRoute;
+      return useRouteStore().currentRoute;
     },
   },
 };

@@ -94,7 +94,7 @@
 <script>
 import Header from "../components/Header.vue";
 import Title from "../components/Title.vue";
-import { useStore } from "../stores/routes";
+import { useRouteStore } from "../stores/routes";
 import { getTranstated } from "../stores/lang";
 
 export default {
@@ -104,7 +104,7 @@ export default {
   },
   mounted() {
     this.$refs["index"].addEventListener("scroll", this.handleScroll);
-    if (useStore().currentRoute === "index#about") {
+    if (useRouteStore().currentRoute === "index#about") {
       this.$refs["index"].scrollTo({
         top: this.$refs["about"].offsetTop,
         behavior: "smooth",
@@ -117,7 +117,6 @@ export default {
   methods: {
     handleScroll(e) {
       this.$refs["index"].removeEventListener("scroll", self);
-      console.log("y");
       this.$refs["about"].firstChild.classList.add("animate");
     },
     getTranstatedL(key) {
