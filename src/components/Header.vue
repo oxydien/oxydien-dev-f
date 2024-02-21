@@ -222,7 +222,7 @@
             >
               <template #icon><component :is="route.icon" /></template>
               <template #content>
-                {{ getTranstatedL(`header.links.${route.name}`) }}</template
+                {{ getTranstatedL(`header.links.${route.loc}`) }}</template
               >
             </RouteButton>
           </div>

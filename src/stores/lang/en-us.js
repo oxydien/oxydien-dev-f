@@ -3,11 +3,11 @@ export const en_us_translation = {
   "website.description": "a minimalist developer",
 
   "header.links.index": "index",
-  "header.links.about": "about",
+  "header.links.index#about": "about",
   "header.links.contact": "contact",
   "header.links.projects": "projects",
   "header.links.videos": "videos",
-  "header.links.more": "more routes",
+  "header.links.switch": "more routes",
   "header.settings.lang": "Language",
   "header.settings.theme": "Theme",
 

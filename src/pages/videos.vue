@@ -58,6 +58,17 @@
         <button @click="changeRouteL('index')">
           <img src="../assets/icons/arrow.svg" aria-hidden="true" /> Back
         </button>
+        <button @click="viewRaw = !viewRaw">Check raw</button>
+        <div class="videos" v-show="viewRaw">
+          <div class="video" v-for="video in videos.data">
+            <img
+              :src="`https://i.ytimg.com/vi/${video.videoId}/hq720.jpg`"
+              alt=""
+            />
+            <h3>{{ video.name }}</h3>
+            <p>{{ video.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -68,18 +79,47 @@ import Header from "../components/Header.vue";
 
 import { getTranstated } from "../stores/lang";
 import { useRouteStore } from "../stores/routes";
+import { useAppStore } from "../stores/appStore";
 
 export default {
+  data() {
+    return {
+      viewRaw: false,
+      videos: {
+        loaded: 2,
+        data: [],
+      },
+    };
+  },
   components: {
     Header,
   },
-
+  mounted() {
+    this.loadVideosFromBackend();
+  },
   methods: {
     getTranstatedL(key) {
       return getTranstated(key);
     },
     changeRouteL(route) {
       return useRouteStore().changeRoute(route);
+    },
+    loadVideosFromBackend() {
+      const appStore = useAppStore();
+      const bg_url = `${appStore.backend_url}api/v1/content/youtube/videos/`;
+      fetch(bg_url)
+        .then(async (response) => {
+          if (response.status === 200) {
+            const json = await response.json();
+            this.videos.data = json.data.items;
+          } else {
+            console.warn(
+              "_BACKEND",
+              `Server responded with weird status: ${response.status}`
+            );
+          }
+        })
+        .catch((error) => console.error("Error:", error));
     },
   },
 };

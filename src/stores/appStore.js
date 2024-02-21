@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useAppStore = defineStore("app", {
   state: () => {
     return {
-      backend_url: "http://bg.oxydien.dev:3001/",
+      backend_url: "https://bg.oxydien.dev/",
       connected_to_bg: false,
     };
   },
