@@ -1,8 +1,6 @@
 {
   "name": "oxydien",
-  "version": "0.0.1",
-  "version_addons": "7a",
-  "dev": false,
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "vite --host",

@@ -5,6 +5,7 @@
     viewBox="0 0 35 34"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
   >
     <path
       fill-rule="evenodd"
@@ -14,3 +15,4 @@
     />
   </svg>
 </template>
+<!-- Credit github branding https://github.com/logos -->

@@ -1,19 +1,11 @@
 export const en_us_translation = {
-  "website.title": "oxydien",
-  "website.description": "a minimalist developer",
+	"website.title": "oxydien",
+	"website.description":
+		"Hey there! I’m oxydien, a Rust, Java, C#, and JavaScript developer. I enjoy working on quirky and fun projects that challenge my creativity. If you’re interested in collaborating or just want to chat about code, feel free to reach out! ",
 
-  "header.links.index": "index",
-  "header.links.index#about": "about",
-  "header.links.contact": "contact",
-  "header.links.projects": "projects",
-  "header.links.videos": "videos",
-  "header.links.switch": "more routes",
-  "header.settings.lang": "Language",
-  "header.settings.theme": "Theme",
+	"section.social.title": "You can find me here:",
+	"section.contact.title": "Contact me here:",
 
-  "about.heading": "about",
-  "about.text": "Hello, im oxydien, a young developer. Right now im mainly focusing on Javascript and Rust. I like to build apps on Tauri and doing some silly stuff.",
-
-  "contact.platforms.text": "Contact me on these platforms:",
-  "contact.email.text": "Or via email:",
+	"section.footer.open-source": "This page is ",
+	"section.footer.host": "Hosted on ",
 };

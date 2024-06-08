@@ -1,4 +1,4 @@
-# oxydien.dev (frontend)
+# oxydien.dev
 
 This is the official repository for my personal website, oxydien.dev.
 
@@ -6,8 +6,6 @@ This is the official repository for my personal website, oxydien.dev.
 
 - `src/`: Contains the main source code for the website.
   - `components/`: Vue components used throughout the site.
-  - `pages/`: Different pages of the website.
-  - `pages/Router.vue`: Configuration for Vue Router.
   - `Main.vue`: The main Vue app component.
   - `main.js`: Entry point for the application.
 

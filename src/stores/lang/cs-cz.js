@@ -1,20 +1,11 @@
 export const cs_cz_translation = {
 	"website.title": "oxydien",
-	"website.description": "minimalistický developer",
+	"website.description":
+		"Ahoj! Jsem oxydien, vývojář v Rustu, Javě, C# a JavaScriptu. Rád pracuji na bizarních a zábavných projektech, které jsou výzvou pro mou kreativitu. Pokud máte zájem o spolupráci nebo si jen chcete popovídat o kódu, neváhejte se ozvat! ",
 
-	"header.links.index": "index",
-	"header.links.index#about": "o mně",
-	"header.links.contact": "kontakt",
-	"header.links.projects": "projekty",
-	"header.links.videos": "videa",
-	"header.links.switch": "více míst",
-	"header.settings.lang": "Jazyk",
-	"header.settings.theme": "Motiv",
+	"section.social.title": "Najdete mě tady:",
+	"section.contact.title": "Kontaktovat mě můžete zde:",
 
-	"about.heading": "o mně",
-	"about.text":
-		"Ahoj, já jsem oxydien, mladý vývojář. Převážně se zaměřuji na Javascript a Rust. Rád vytvářím aplikace na Tauri a dělám nějaké hlouposti.",
-
-	"contact.platforms.text": "Kontaktujte mě na těchto platformách:",
-	"contact.email.text": "Nebo přes email:",
+	"section.footer.open-source": "Tato stránka je ",
+	"section.footer.host": "Hostována na ",
 };
