@@ -9,14 +9,12 @@
   padding-top: 20%;
   padding-top: 20vh;
   padding-top: 20svh;
-
-  .logo {
-    font-size: clamp(12rem, 20vw, 30rem);
-  }
+  
   h1 {
     position: absolute;
     font-size: clamp(2rem, 3vw, 4rem);
     color: #fff;
+    animation: colorTransition 2s ease-in forwards;
     bottom: -5%;
     --_offset: 2px;
     --_neg_offset: calc(-1 * var(--_offset));
@@ -25,6 +23,15 @@
       var(--_offset) var(--_neg_offset) 0 var(--_color),
       var(--_neg_offset) var(--_offset) 0 var(--_color),
       var(--_offset) var(--_offset) 0 var(--_color);
+  }
+
+  @keyframes colorTransition {
+    from {
+      color: #fff;
+    }
+    to {
+      color: #DBB4BF;
+    }
   }
 }
 
@@ -41,7 +48,8 @@
 }
 
 #contact,
-#socials {
+#socials,
+#portfolio {
   width: fit-content;
   margin: max(7rem, 5%) auto;
 }
@@ -56,7 +64,7 @@
 <template>
   <main ref="main">
     <section id="logo">
-      <Logo class="logo" aria-hidden="true" />
+      <LandingTransition />
       <h1>{{ apx.getTranslation("website.title") }}</h1>
     </section>
     <section id="about">
@@ -66,6 +74,9 @@
     </section>
     <section id="socials">
       <SocialComponent />
+    </section>
+    <section id="portfolio">
+      <PortfolioComponent />
     </section>
     <section id="contact">
       <EmailComponent />
@@ -90,17 +101,24 @@
 </template>
 
 <script>
-import Logo from "./components/icons/LogoIcon.vue";
+import LandingTransition from "./components/LandingTransition.vue";
 import SocialComponent from "./components/SocialComponent.vue";
+import PortfolioComponent from "./components/PortfolioComponent.vue";
 import EmailComponent from "./components/EmailComponent.vue";
 import { useAppStore } from "./stores/appStore.js";
 
 export default {
-  components: { Logo, SocialComponent, EmailComponent },
-  data() {
-    return {
-      apx: useAppStore(),
-    };
-  },
+	components: {
+		LandingTransition,
+		SocialComponent,
+		PortfolioComponent,
+		EmailComponent,
+	},
+
+	data() {
+		return {
+			apx: useAppStore(),
+		};
+	},
 };
 </script>

@@ -5,6 +5,7 @@ export const en_us_translation = {
 
 	"section.social.title": "You can find me here:",
 	"section.contact.title": "Contact me here:",
+	"section.portfolio.title": "Projects that I’ve been part of:",
 
 	"section.footer.open-source": "This page is ",
 	"section.footer.host": "Hosted on ",

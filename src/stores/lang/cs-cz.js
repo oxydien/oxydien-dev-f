@@ -5,6 +5,7 @@ export const cs_cz_translation = {
 
 	"section.social.title": "Najdete mě tady:",
 	"section.contact.title": "Kontaktovat mě můžete zde:",
+	"section.portfolio.title": "Projekty, ve kterých jsem byl:",
 
 	"section.footer.open-source": "Tato stránka je ",
 	"section.footer.host": "Hostována na ",
