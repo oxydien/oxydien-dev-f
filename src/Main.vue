@@ -9,7 +9,7 @@
   padding-top: 20%;
   padding-top: 20vh;
   padding-top: 20svh;
-  
+
   h1 {
     position: absolute;
     font-size: clamp(2rem, 3vw, 4rem);
@@ -19,7 +19,8 @@
     --_offset: 2px;
     --_neg_offset: calc(-1 * var(--_offset));
     --_color: #000;
-    text-shadow: var(--_neg_offset) var(--_neg_offset) 0 var(--_color),
+    text-shadow:
+      var(--_neg_offset) var(--_neg_offset) 0 var(--_color),
       var(--_offset) var(--_neg_offset) 0 var(--_color),
       var(--_neg_offset) var(--_offset) 0 var(--_color),
       var(--_offset) var(--_offset) 0 var(--_color);
@@ -30,7 +31,7 @@
       color: #fff;
     }
     to {
-      color: #DBB4BF;
+      color: #dbb4bf;
     }
   }
 }
@@ -72,6 +73,12 @@
         {{ apx.getTranslation("website.description") }}
       </p>
     </section>
+    <section id="new_project">
+      <ProjectLargeView
+        image_src="/assets/img/project_reb0rex_3FCI.png"
+        url="https://reb0rex.oxydien.dev"
+      />
+    </section>
     <section id="socials">
       <SocialComponent />
     </section>
@@ -102,23 +109,25 @@
 
 <script>
 import LandingTransition from "./components/LandingTransition.vue";
+import ProjectLargeView from "./components/ProjectLargeView.vue";
 import SocialComponent from "./components/SocialComponent.vue";
 import PortfolioComponent from "./components/PortfolioComponent.vue";
 import EmailComponent from "./components/EmailComponent.vue";
 import { useAppStore } from "./stores/appStore.js";
 
 export default {
-	components: {
-		LandingTransition,
-		SocialComponent,
-		PortfolioComponent,
-		EmailComponent,
-	},
+  components: {
+    LandingTransition,
+    ProjectLargeView,
+    SocialComponent,
+    PortfolioComponent,
+    EmailComponent,
+  },
 
-	data() {
-		return {
-			apx: useAppStore(),
-		};
-	},
+  data() {
+    return {
+      apx: useAppStore(),
+    };
+  },
 };
 </script>

@@ -69,7 +69,7 @@ import { markRaw } from "vue";
 import { useAppStore } from "../stores/appStore.js";
 
 import GithubIcon from "./icons/GithubIcon.vue";
-import XTwitterIcon from "./icons/XTwitterIcon.vue";
+import BSkyIcon from "./icons/BSkyIcon.vue";
 import DiscordIcon from "./icons/DiscordIcon.vue";
 import GitlabIcon from "./icons/GitlabIcon.vue";
 
@@ -90,9 +90,9 @@ export default {
           component: markRaw(DiscordIcon),
         },
         {
-          name: "X",
-          url: "https://x.com/oxydien",
-          component: markRaw(XTwitterIcon),
+          name: "BlueSky",
+          url: "https://bsky.app/profile/oxydien.dev",
+          component: markRaw(BSkyIcon),
         },
         {
           name: "GitLab",
